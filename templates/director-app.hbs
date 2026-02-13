@@ -1,0 +1,67 @@
+<form class="drawsteel-montage director-app" autocomplete="off">
+  <header class="app-header flexrow">
+    <h1 class="app-title">{{title}}</h1>
+    <div class="header-actions flexrow">
+      {{#if active}}
+        <button type="button" class="end-test" data-action="endTest">
+          <i class="fa-solid fa-stop"></i> {{localize "DRAWSTEEL_MONTAGE.DirectorApp.EndTest"}}
+        </button>
+      {{else}}
+        <button type="button" class="new-test" data-action="newTest">
+          <i class="fa-solid fa-play"></i> {{localize "DRAWSTEEL_MONTAGE.DirectorApp.NewTest"}}
+        </button>
+      {{/if}}
+    </div>
+  </header>
+
+  {{#if active}}
+  <section class="montage-state">
+    <div class="counters flexrow">
+      <div class="counter successes">
+        <span class="label">{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Successes"}}</span>
+        <span class="value">{{successes}}{{#if showLimits}}/{{successLimit}}{{/if}}</span>
+      </div>
+      <div class="counter failures">
+        <span class="label">{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Failures"}}</span>
+        <span class="value">{{failures}}{{#if showLimits}}/{{failureLimit}}{{/if}}</span>
+      </div>
+    </div>
+    <div class="round-info">
+      <span>{{roundLabel}}</span>
+    </div>
+
+    {{#if pendingApprovals.length}}
+    <section class="pending-approvals">
+      <h3>{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Pending"}}</h3>
+      <ul class="approval-list">
+        {{#each pendingApprovals}}
+        <li class="approval-item flexrow" data-approval-id="{{id}}">
+          <span class="actor-name">{{actorName}}</span>
+          <span class="action-type">{{actionType}}</span>
+          {{#if characteristic}}<span class="char">{{characteristic}}</span>{{/if}}
+          <div class="approval-actions flexrow">
+            <button type="button" class="approve" data-action="approve" data-approval-id="{{id}}" title="Approve">
+              <i class="fa-solid fa-check"></i>
+            </button>
+            <button type="button" class="reject" data-action="reject" data-approval-id="{{id}}" title="Reject">
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    {{/if}}
+
+    {{#if outcome}}
+    <section class="outcome">
+      <h3 class="outcome-{{outcome}}">{{outcomeLabel}}</h3>
+    </section>
+    {{/if}}
+  </section>
+  {{else}}
+  <section class="no-test">
+    <p>No active montage test. Click "New Montage Test" to start.</p>
+  </section>
+  {{/if}}
+</form>

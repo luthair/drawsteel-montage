@@ -1,0 +1,8 @@
+node_modules/
+*.map
+package-lock.json
+dist/
+*.zip
+
+montage-test-rules.md
+draw-steel/

@@ -1,0 +1,16 @@
+{
+  "name": "drawsteel-montage",
+  "version": "0.1.0",
+  "description": "Draw Steel Montage Test module for Foundry VTT",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "pack": "node pack.mjs"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.16",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}

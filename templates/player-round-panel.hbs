@@ -1,0 +1,48 @@
+<form class="drawsteel-montage player-round-panel" autocomplete="off">
+  <header class="panel-header">
+    <h2>{{localize "DRAWSTEEL_MONTAGE.PlayerPanel.Title"}}</h2>
+    <span class="round-badge">Round {{currentRound}}</span>
+  </header>
+
+  {{#if canAct}}
+  <section class="action-choices">
+    <p>Choose your action for this round:</p>
+    <div class="button-row">
+      <button type="button" class="action-btn test" data-action="test">
+        <i class="fa-solid fa-dice-d10"></i> {{localize "DRAWSTEEL_MONTAGE.PlayerPanel.Test"}}
+      </button>
+      <button type="button" class="action-btn assist" data-action="assist">
+        <i class="fa-solid fa-hand-holding-hand"></i> {{localize "DRAWSTEEL_MONTAGE.PlayerPanel.Assist"}}
+      </button>
+      <button type="button" class="action-btn abstain" data-action="abstain">
+        <i class="fa-solid fa-minus"></i> {{localize "DRAWSTEEL_MONTAGE.PlayerPanel.Abstain"}}
+      </button>
+    </div>
+  </section>
+
+  {{#if showTestForm}}
+  <section class="test-form">
+    <div class="form-group">
+      <label>{{localize "DRAWSTEEL_MONTAGE.PlayerPanel.Characteristic"}}</label>
+      <select name="characteristic">
+        {{#each characteristics}}
+        <option value="{{id}}" {{#unless available}}disabled{{/unless}}>{{label}}{{#unless available}} (used){{/unless}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>{{localize "DRAWSTEEL_MONTAGE.PlayerPanel.Narrative"}}</label>
+      <input type="text" name="narrative" placeholder="Brief description of your approach" />
+    </div>
+    <button type="button" class="submit-btn" data-action="submit">{{#if isAssist}}Assist{{else}}Make Test{{/if}}</button>
+  </section>
+  {{/if}}
+
+  {{#if acted}}
+  <p class="acted-msg">You have {{actionSummary}} this round. Waiting for others.</p>
+  {{/if}}
+
+  {{#if roundComplete}}
+  <p class="round-complete">Round complete. Waiting for Director to start next round.</p>
+  {{/if}}
+</form>

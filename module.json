@@ -1,0 +1,32 @@
+{
+  "id": "drawsteel-montage",
+  "title": "Drawsteel Montage",
+  "description": "A module for Draw Steel that facilitates and automates Montage Tests in Foundry VTT.",
+  "version": "0.1.0",
+  "authors": [{ "name": "Luthair" }],
+  "compatibility": {
+    "minimum": "13.0.0",
+    "verified": "13"
+  },
+  "relationships": {
+    "systems": [{ "id": "draw-steel", "type": "system" }],
+    "requires": []
+  },
+  "socket": true,
+  "esmodules": ["drawsteel-montage.js"],
+  "styles": ["drawsteel-montage.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/Luthair/drawsteel-montage",
+  "manifest": "https://raw.githubusercontent.com/Luthair/drawsteel-montage/main/module.json",
+  "download": "https://github.com/Luthair/drawsteel-montage/releases/download/v0.1.0/drawsteel-montage.zip",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "bugs": "https://github.com/Luthair/drawsteel-montage/issues",
+  "changelog": "https://github.com/Luthair/drawsteel-montage/releases"
+}

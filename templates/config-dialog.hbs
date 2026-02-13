@@ -1,0 +1,34 @@
+<form class="drawsteel-montage config-dialog">
+  <div class="form-group">
+    <label>{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.Title"}}</label>
+    <input type="text" name="title" value="{{title}}" placeholder="Montage Test" />
+  </div>
+  <div class="form-group">
+    <label>{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.Description"}}</label>
+    <textarea name="description" rows="3">{{description}}</textarea>
+  </div>
+  <div class="form-group">
+    <label>{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.Difficulty"}}</label>
+    <select name="difficulty">
+      <option value="easy">{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.Easy"}}</option>
+      <option value="moderate" selected>{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.Moderate"}}</option>
+      <option value="hard">{{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.Hard"}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>
+      <input type="checkbox" name="visibility" {{#if visibility}}checked{{/if}} />
+      {{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.Visibility"}}
+    </label>
+  </div>
+  <div class="form-group custom-limits">
+    <label>
+      <input type="checkbox" name="useCustomLimits" {{#if useCustomLimits}}checked{{/if}} />
+      {{localize "DRAWSTEEL_MONTAGE.DirectorApp.Config.CustomLimits"}}
+    </label>
+    <div class="limit-inputs">
+      <input type="number" name="successLimit" value="{{successLimit}}" min="2" />
+      <input type="number" name="failureLimit" value="{{failureLimit}}" min="2" />
+    </div>
+  </div>
+</form>

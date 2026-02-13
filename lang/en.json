@@ -1,0 +1,44 @@
+{
+  "DRAWSTEEL_MONTAGE": {
+    "DirectorApp": {
+      "Title": "Montage Test",
+      "NewTest": "New Montage Test",
+      "EndTest": "End Montage Test",
+      "Round": "Round {n}",
+      "Successes": "Successes",
+      "Failures": "Failures",
+      "Pending": "Pending approval",
+      "Config": {
+        "Title": "Title",
+        "Description": "Description",
+        "Difficulty": "Difficulty",
+        "Easy": "Easy",
+        "Moderate": "Moderate",
+        "Hard": "Hard",
+        "Visibility": "Show limits to players",
+        "CustomLimits": "Custom limits",
+        "SuccessLimit": "Success limit",
+        "FailureLimit": "Failure limit"
+      }
+    },
+    "PlayerPanel": {
+      "Title": "Montage Round",
+      "Join": "Participate",
+      "Abstain": "Abstain",
+      "Test": "Make test",
+      "Assist": "Assist",
+      "Characteristic": "Characteristic",
+      "Narrative": "Narrative contribution"
+    },
+    "Outcomes": {
+      "TotalSuccess": "Total success",
+      "PartialSuccess": "Partial success",
+      "TotalFailure": "Total failure"
+    },
+    "Victory": {
+      "EasyModerate": "The heroes earn 1 Victory.",
+      "Hard": "The heroes earn 2 Victories.",
+      "Partial": "The heroes earn 1 Victory."
+    }
+  }
+}
